@@ -1,0 +1,14 @@
+2020-06-06 11:35:26,444 0      [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2020-06-06 11:35:26,462 18     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2020-06-06 11:35:26,462 18     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2020-06-06 11:35:26,462 18     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2020-06-06 11:35:26,462 18     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2020-06-06 11:35:26,533 89     [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Opening JDBC Connection
+2020-06-06 11:35:28,556 2112   [           main] DEBUG source.pooled.PooledDataSource  - Created connection 823575379.
+2020-06-06 11:35:28,556 2112   [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3116c353]
+2020-06-06 11:35:28,560 2116   [           main] DEBUG        com.dao.UserDao.findAll  - ==>  Preparing: select * from product where regist_date>'2020-5-20' 
+2020-06-06 11:35:28,599 2155   [           main] DEBUG        com.dao.UserDao.findAll  - ==> Parameters: 
+2020-06-06 11:35:28,783 2339   [           main] DEBUG        com.dao.UserDao.findAll  - <==      Total: 9
+2020-06-06 11:35:28,785 2341   [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3116c353]
+2020-06-06 11:35:28,806 2362   [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3116c353]
+2020-06-06 11:35:28,806 2362   [           main] DEBUG source.pooled.PooledDataSource  - Returned connection 823575379 to pool.
