@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.dao.UserDao">
+    <!--配置查询所有-->
+    <select id="findAll" resultType="com.domain.User">    <!--在映射配置中告知mybatis要封装到哪个实体类中-->
+                            <!--封装的实体类的全限定类名-->
+        select * from product where regist_date>'2020-5-20'  <!--有了它，就有了执行的SQL语句，就可以获取PreparedStatement-->
+    </select>
+</mapper>
