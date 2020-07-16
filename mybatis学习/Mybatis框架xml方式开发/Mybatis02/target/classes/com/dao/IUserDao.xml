@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.UserDao">
+    <!--查询-->
+    <select id="findAll" resultType="com.domain.User">
+        select * from product
+    </select>
+    <!--增添-->
+    <insert id="addUser" parameterType="com.domain.User">
+        <selectKey resultType="String" keyProperty="product_name" order="AFTER" keyColumn="product_name">
+            select last_insert_id();    <!--SELECT LAST_INSERT_ID() 即为获取最后插入的ID值-->
+        </selectKey>
+        insert into product(product_name,product_type,product_price,regist_date) value (#{product_name},#{product_type},#{product_price},#{regist_date})
+    </insert>
+    <!--删除-->
+    <delete id="deleteUserByType" parameterType="String">
+        delete from product where product_type=#{product_type}
+    </delete>
+    <!--修改-->
+    <update id="updateUser" parameterType="com.domain.User">
+        update product set product_name=#{product_name},product_price=#{product_price},regist_date=#{regist_date} where product_type=#{product_type}
+    </update>
+    <select id="findByType" parameterType="String" resultType="com.domain.User">
+        select * from product where product_type like #{product_type}
+    </select>
+</mapper>
