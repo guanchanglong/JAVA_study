@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ProductDao">
+    <!--parameterType属性用于对应的mapper接口方法接受的参数类型，resultType用于指定sql输出的结果类型-->
+    <select id="findByType" parameterType="com.domain.Product" resultType="com.domain.Product">
+        select * from product where 1=1
+        <!--注意：这里仅仅是测试if标签的用法，实际开发中可以不这么写-->
+        <if test="#{product_type}!=null">
+            and product_type=#{product_type}
+        </if>
+    </select>
+    <!--配置根据多个信息查询学生的方法-->
+    <select id="findByProduct" parameterType="com.domain.Product" resultType="com.domain.Product">
+        select * from product
+        <where>
+            <if test="product_type!=null">
+                and product_type like #{product_type}
+            </if>
+            <if test="product_price!=null">
+                and product_price>#{product_price}
+            </if>
+        </where>
+    </select>
+    <!--配置根据多个type查询产品的方法，注意参数类型为QueryProduct-->
+    <select id="findByType2" parameterType="com.domain.QueryProduct" resultType="com.domain.Product">
+        select * from product
+        <where>
+            <if test="p_type!=null and p_type.size()>0">
+                <foreach collection="p_type" open="and product_type in(" close=")" item="product_type" separator=",">
+                    #{product_type}
+                </foreach>
+            </if>
+        </where>
+    </select>
+</mapper>
