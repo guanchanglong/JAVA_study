@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.AccountDao">
+
+    <!-- 定义封装account和user的resultMap -->
+    <!-- 一对一的关系映射：配置封装user的内容-->
+    <!--<resultMap id="给ID名" type="实体类" >
+            <result column="数据库字段名" property="实体类属性" jdbcType="数据库字段类型" />
+        </resultMap>-->
+    <resultMap id="accountUserMap" type="account">
+        <id property="id" column="aid"></id>    <!--此处的aid为表中id的别名-->
+        <result property="uid" column="uid"></result>
+        <result property="money" column="money"></result>
+        <association property="user" column="uid" javaType="user">
+            <!--为了防止我们开发出错，在没有特别要求的情况下，column名可以完全和property名称一致，否则当我们没有对应上的时候，数据库匹配不到-->
+            <id property="id" column="id"></id>
+            <result column="username" property="username"></result>
+            <result column="address" property="address"></result>
+            <result column="sex" property="sex"></result>
+            <result column="birthday" property="birthday"></result>
+        </association>
+    </resultMap>
+
+    <!-- 查询所有 -->
+    <select id="findAll" resultMap="accountUserMap">
+        <!--as  可理解为：用作、当成，作为；一般是重命名列名或者表名。（主要为了查询方便）-->
+        select u.*,a.id as aid,a.uid,a.money from account a,user u where u.id = a.uid;<!--(u.*,a.id as aid,a.uid,a.mony)表示account表和user表-->
+    </select>
+
+    <!--查询所有账户同时包含用户名和地址信息-->
+    <select id="findAllAccount" resultType="accountuser">
+        select a.*,u.username,u.address from account a , user u
+        where u.id = a.uid;
+    </select>
+
+</mapper>
