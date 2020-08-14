@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+    <!-- 引用p命名空间 --><!-- 如果要引用p命名，那在最上面sxd中就要配置  xmlns:p="http://www.springframework.org/schema/p"-->
+    <!--p:<属性名>="xxx" 引入常量值-->
+    <!--p:<属性名>-ref="xxx" 引用其它Bean对象-->
+    <bean id="car11" class="com.Car1" p:name="奥迪" p:price="500000">
+    </bean>
+    <bean id="employee2" class="com.Employee" p:name="张三" p:car1-ref="car11"/>
+
+
+    <!-- 引入spEL表达式 -->
+    <bean id="carInfo" class="com.CarInfo"/>
+    <bean id="car1_1" class="com.Car1">
+        <property name="name" value="#{carInfo.name}"/>
+        <property name="price" value="#{carInfo.calculatePrice()}"/>
+    </bean>
+
+    <!-- 复杂属性的依赖注入 -->
+    <bean  id="collectionBean" class="com.CollectionBean">
+        <!-- 简单属性的注入 -->
+        <property name="name" value="小小关"/>
+        <property name="age" value="19"/>
+
+        <!-- 注入list集合 -->
+        <property name="hobbies">
+            <list>
+                <value>吃饭</value>
+                <value>睡觉</value>
+                <value>看剧</value>
+                <value>敲代码</value>
+            </list>
+        </property>
+
+        <!-- 注入set集合 -->
+        <property name="numbers">
+            <set>
+                <value>10</value>
+                <value>20</value>
+                <value>30</value>
+                <value>40</value>
+                <value>50</value>
+            </set>
+        </property>
+
+        <!-- 注入map集合 -->
+        <property name="map">
+            <map>
+                <entry key="birthday" value="2000-1-1"/>
+                <entry key="address" value="地球"/>
+                <entry key="sex" value="男"/>
+            </map>
+        </property>
+
+        <!-- 注入Properties -->
+        <property name="properties">
+            <props>
+                <prop key="compamy">西邮</prop>
+                <prop key="pnum">200</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- end  Bean的依赖注入===================================================================================== -->
+    <!--<import resource="classpath:bean1.xml"/>-->
+    <!--<import resource="classpath:bean2.xml"/>-->
+    <!-- 这里导入是指如果在src下还有其它的beans.xml我们可以这样去调用 -->
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+    <context:component-scan base-package="com"/>
+
+<!--    &lt;!&ndash; 配置注解bean所在的包 &ndash;&gt;-->
+<!--    <context:annotation-config/> &lt;!&ndash;支持注解&ndash;&gt;-->
+<!--    &lt;!&ndash;自动扫描&ndash;&gt; &lt;!&ndash; base-package放的是包名，有多个包名中间用逗号隔开 &ndash;&gt;-->
+<!--    <context:component-scan base-package="com"/>-->
+</beans>
