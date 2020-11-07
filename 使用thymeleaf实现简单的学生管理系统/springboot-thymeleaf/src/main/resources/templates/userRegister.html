@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${usersModel.title}"></title>
+</head>
+<body>
+
+<form action="/users/userRegister" method="post" th:object="${usersModel.user}">
+    <div style="text-align: center">
+        <span style="color: darkslategray; font-size: 30px">用户注册</span>
+        <input type="hidden" name="id" th:value="*{id}">
+        <br>
+        学号:
+        <input type="text" name="username" placeholder="请输入学号" th:value="*{username}">
+        <br>
+        密码:
+        <input type="text" name="password" placeholder="请输入密码" th:value="*{password}">
+        <br>
+        <input type="submit" value="提交" th:href="@{/users/userRegister}">
+    </div>
+</form>
+</body>
+</html>

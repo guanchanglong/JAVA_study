@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${studentsModel.title}"></title>
+</head>
+<body>
+
+<form action="/students/addStudents" method="post" th:object="${studentsModel.student}">
+    <div style="text-align: center">
+        <span style="color: darkslategray; font-size: 30px">添加学生</span>
+        <br>
+        <br>
+        <input type="hidden" name="id" th:value="*{id}">
+        <br>
+        <br>
+        姓名：
+        <input type="text" name="name" th:value="*{name}">
+        <br>
+        <br>
+        性别：
+        <input type="text" name="sex" th:value="*{sex}">
+        <br>
+        <br>
+        学号：
+        <input type="text" name="number" th:value="*{number}">
+        <br>
+        <br>
+        电话：
+        <input type="text" name="phone" th:value="*{phone}">
+        <br>
+        <br>
+        综测：
+        <input type="text" name="grade" th:value="*{grade}">
+        <br>
+        <br>
+        <input type="submit" value="提交" th:href="@{/students/addStudents}">
+    </div>
+</form>
+</body>
+</html>
