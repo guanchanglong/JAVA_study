@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>西邮大数据与人工智能实验室</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/scrollslide.css">
+  <script src="js/JQuery.js"></script>
+  <link rel="stylesheet" href="css/iconfont.css">
+  <link rel="stylesheet" href="css/displayswap.css">
+  <link rel="stylesheet" href="css/实验室迎新页面.css">
+  <script>
+    if (screen && screen.width >768 ) 
+      document.write('<script src="js/实验室纳新.js"><\/script>');
+  </script>
+</head>
+<body>
+<div class="header">
+  <div class="logo">
+  </div>
+  <div class="links">
+    <a href="https://baike.baidu.com/item/%E7%AE%97%E6%B3%95/209025?fr=aladdin" class="nono" target="_blank"><i class="iconfont icon-suanfaku"></i>&nbsp;算法组</a>
+    <!-- <a href="https://baike.baidu.com/item/UI%E8%AE%BE%E8%AE%A1/750896?fr=aladdin" class="nono" target="_blank"><i class="iconfont icon-baidu1"></i>&nbsp;UI组</a> -->
+    <a href="https://baike.baidu.com/item/%E5%89%8D%E7%AB%AF/5956545?fr=aladdin" class="nono" target="_blank"><i class="iconfont icon-html5"></i>&nbsp;前端组</a>
+    <a href="https://baike.baidu.com/item/%E5%90%8E%E5%8F%B0/3167626?fr=aladdin" class="nono" target="_blank"><i class="iconfont icon-java"></i>&nbsp;后台组</a>
+    <a href="https://baike.baidu.com/item/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/217599?fr=aladdin" class="nono" target="_blank"><i class="iconfont icon-jiqixuexi"    ></i>机器学习组</a>
+    <a href="javascript:;" id="join"><i class="iconfont icon-Join"></i>&nbsp;join us</a>
+  </div>
+</div>
+<div class="mengban"></div>
+<div class="login">
+  <div id="title" class="login-title">请输入信息
+    <span><a id="closeBtn" href="javascript:void(0)">×</a></span>
+  </div>
+  <form name="form1">
+    <!--  只能数字和中文 -->
+    <label class="login-input label1">专业班级:
+      <input type="text" placeholder="请输入专业和班级" class="major">
+      <span id="pic1"><img src="img/error.png">请输入专业班级的正确格式,例如：大数据2001</span>
+    </label>
+    <!--          只能输入中文-->
+    <label class="login-input label2">姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" placeholder="请输入姓名" class="xingming">
+      <span id="pic2"><img src="img/error.png">请输入姓名的正确格式</span></label>
+    <label class="login-input labelsex">性别:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="sex" value="1" checked> 男&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"name="sex" value="0">女</label>
+    <!--          1.文本框只能输入数字代码(小数点也不能输入) -->
+    <label class="login-input label3">学号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" placeholder="请输入学号" id="deom" class="number">
+      <span id="pic3"><img src="img/error.png">请输入8位的学号</span></label>
+    <label class="login-input">分组意向:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <select  class="intention">
+        <option>后台组</option>
+        <option>前端组</option>
+        <option>机器学习组</option>
+        <option>算法组</option>
+<!--        <option>UI组</option>-->
+      </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label class="login-input label4">联系方式:
+      <input type="text" placeholder="请输入联系方式" class="phone">
+      <span id="pic4"><img src="img/error.png">请输入11位的手机号码</span></label>
+    <input type="button" value="提交" class="login-button button pink bigrounded" >
+  </form>
+</div>
+<!--mi zong-->
+<div class="content home container">
+  <div class="first_section" id="sf">
+    <div class="first_section_left">
+      <span>算法组</span>
+      算法代表着用系统的方法描述解决问题的策略机制.不同的算法可能用不同的时间、空间或效率来完成同样的任务.一个算法的优劣可以用空间复杂度与时间复杂度来衡量。学习算法可以提升思维，特别是逻辑推理能力。
+    </div>
+    <div class="first_section_right">
+    </div>
+  </div>
+  <div class="second_section" id="jq">
+    <div class="second_section_left">
+      <span>机器学习组</span>
+      机器学习其实是人工智能很重要的一部分，因为目前，在实践过程中，大多数的人工智能处理的任务，其实是用机器学习的方式完成的。机器学习可以使机器具有人的学习、思考、认知能力，然后通过学习到的知识来指导进一步的判断。
+    </div>
+    <div class="second_section_right"></div>
+  </div>
+  <div class="third_section" id="qd">
+    <div class="third_section_left">
+      <span>前端组</span>
+      前端即网站前台部分,运行在PC端,移动端等浏览器上展现给用户浏览的网页.随着互联网技术的发展,HTML5，CSS3，前端框架的应用,跨平台响应式网页设计能够适应各种屏幕分辨率,合适的动效设计,给用户带来极高的用户体验.
+    </div>
+    <div class="third_section_right"></div>
+  </div>
+  <div class="forth_section" id="ht">
+    <div class="forth_section_left">
+      <span>后台组</span>
+      后台多用Java语言。Java是一种为多个平台生成软件、面向对象的编程语言，具有简单性、分布式、健壮性、安全性、多线程、动态性等特点。Java的众多特点使得它的应用范围也很广，它可以编写游戏、开发软件、做Android操作系统、企业级应用开发。
+    </div>
+    <div class="forth_section_right"></div>
+  </div>
+ 
+  <div class="slide_block">
+    <div class="scrolllist">
+      <ul>
+        <li class="shoveritem">
+          <a href="#sf" target="_self" >                    <div class="img">
+            <img src="img/post.jpg" alt="">
+          </div>
+            <div class="mask"></div>
+            <div class="cont">
+              <img src="img/library.png" alt="">
+              <p>算法组</p>
+            </div></a>
+
+        </li>
+        <!-- <li class="shoveritem">
+          <a href="#ui" target="_self" >          <div class="img">
+            <img src="img/post.jpg" alt="">
+          </div>
+            <div class="mask"></div>
+            <div class="cont">
+              <img src="img/shitingguan.png" alt="">
+              <p>UI组</p>
+            </div></a>
+
+        </li> -->
+        <li class="shoveritem">
+          <a href="#qd" target="_self" >          <div class="img">
+            <img src="img/lion.jpg" alt="">
+          </div>
+            <div class="mask"></div>
+            <div class="cont">
+              <img src="img/digital.png" alt="">
+              <p>前端组</p>
+            </div></a>
+
+        </li>
+        <li class="shoveritem">
+          <a href="#ht" target="_self" >          <div class="img">
+            <img src="img/post.jpg" alt="">
+          </div>
+            <div class="mask"></div>
+            <div class="cont">
+              <img src="img/shitingguan.png" alt="">
+              <p>后台组</p>
+            </div></a>
+
+        </li>
+        <li class="shoveritem">
+          <a href="#jq" target="_self" >          <div class="img">
+            <img src="img/roof.jpg" alt="">
+          </div>
+            <div class="mask"></div>
+            <div class="cont">
+              <img src="img/robot.png" alt="">
+              <p>机器学习组</p>
+            </div></a>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-top">
+    <li class="ziti">
+      <p>联系我们</p>
+      <p>协会地点：西邮东区安悦南五楼</p>
+      <p>所属单位：西安邮电大学计算机系</p>
+    </li>
+    <button class="custom-btn btn-10"   onclick="join_click()"><a href="#"></a>Join us</button>
+    <div class="QRcode">
+      <a href="#">
+      </a>
+      <img src="img/暖色qqcode.jpg" alt="">
+    </div>
+    <div class="QRcode2">
+      <img src="img/gongzhonghao.png" alt="">
+    </div>
+  </div>
+  <div class="footer-bottom" id="bottom">&copy;2020 西安邮电大学大数据与人工智能协会<a href="http://www.beian.miit.gov.cn/">陕ICP备19006814号</a>
+  </div>
+</div>
+<script src="js/sHover.min.js.js"></script>
+<script src="js/index_myhover.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

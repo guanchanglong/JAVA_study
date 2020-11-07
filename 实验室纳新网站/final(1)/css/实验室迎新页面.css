@@ -1,0 +1,208 @@
+.container{
+    width: 100%;
+}
+body{
+    background-color: rgba(204, 204, 204, 0.637);
+}
+.first_section{
+    overflow: hidden;
+    width: 100%;
+    height: 800px; 
+    z-index: 5;
+    background-size: cover;
+    position: relative;
+    background-position:center;
+    background: #4b6cb7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.content span{
+    display:block;
+}
+.second_section{
+    overflow: hidden;
+    width: 100%;
+    height: 800px;
+    background: #C02425;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: 4;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* margin-top: -500px; */
+}
+.third_section{
+    overflow: hidden;
+    width: 100%;
+    height: 800px;
+    background:url("../img/Love Couple.jpg");
+    z-index: 3;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* margin-top: -500px; */
+}
+.forth_section{
+    overflow: hidden;
+    width: 100%;
+    height: 800px;
+    background-color: yellow;
+    z-index: 2;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background: #360033;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.fifth_section{
+    overflow: hidden;
+    width: 100%;
+    height: 800px;
+    background-color: yellow;
+    z-index: 1;
+    background: #C02425;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* margin-top: -500px; */
+}
+.first_section_left span{
+    text-align:center;
+    font-size:25px;
+}
+.second_section_left span{
+   text-align:center;
+   font-size:25px;
+}
+.third_section_left span{
+    text-align:center;
+    font-size:25px;
+}
+.forth_section_left span{
+    text-align:center;
+    font-size:25px;
+}
+.fifth_section_left span{
+    text-align:center;
+    font-size:25px;
+}
+.first_section_left{
+    color:white;
+    font-size:20px;
+    width: 30%;
+    height: 250px;
+    float: left;
+    margin-left: 5%;
+    margin-top: 300px;
+    text-align:left;
+    position: absolute;
+}
+.first_section_right{
+    width:600px;
+    height:500px;
+    background-color: #fff;
+    float: left;
+    margin-left: 45%;
+    margin-top:150px;
+    background:url("../img/picture4.jpg");
+    background-size:cover;
+}
+.second_section_left{
+    float: left;
+    margin-left: 5%;
+    margin-top: 500px;
+    position: absolute;
+    /* margin-top: 200px; */
+    color:white;
+    font-size:20px;
+    width: 30%;
+    height: 250px;
+    text-align:left;
+}
+.second_section_right{
+    background-color: #fff;
+    float: left;
+    margin-left: 45%;
+    margin-top:10%;
+    background:url("../img/picture1.jpg");
+    background-size:cover;
+    width:600px;
+    height:500px;
+    /*background-position: -200px -2175px;*/
+    float: left;
+
+    /* margin-top: -300px;   */
+}
+.third_section_left{
+    color:white;
+    font-size:20px;
+    width: 30%;
+    height: 250px;
+    float: left;
+    margin-left: 5%;
+    margin-top:292.08px;
+    position: absolute;
+    /* margin-top: 200px; */
+    text-align:left;
+}
+.third_section_right{
+    width:600px;
+    height:500px;
+    background-color: #fff;
+    float: left;
+    margin-left:45%;
+    margin-top:164.64px;
+    background:url("../img/picture5.jpg");
+    background-size:cover;
+    /* position: absolute; */
+
+}
+.forth_section_left{
+    margin-top:361.2px;
+    float: left;
+    margin-left: 5%;
+    position: absolute;
+    color:white;
+    font-size:20px;
+    width: 30%;
+    height: 250px;
+    text-align:left;
+}
+.forth_section_right{
+    width:600px;
+    height:500px;
+    background-color: #fff;
+    float: left;
+    margin-left: 45%;
+    margin-top:109.6px;
+    background:url("../img/picture2.jpg");
+
+    background-size:cover;
+}
+.fifth_section_left{
+    margin-top: 365.24px;
+    color:white;
+    font-size:20px;
+    width: 30%;
+    height: 250px;
+    float: left;
+    margin-left: 5%;
+    position: absolute;
+    text-align:left;
+}
+.fifth_section_right{
+    width:600px;
+    height:500px;
+    background-color: #fff;
+    float: left;
+    margin-left: 45%;
+    margin-top:175.92px;
+    background:url("../img/picture1.jpg");
+    background-size:cover;
+}

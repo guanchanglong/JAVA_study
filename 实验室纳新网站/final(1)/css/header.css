@@ -1,0 +1,197 @@
+*{
+  margin:0;
+  padding:0;
+}
+.header{
+  width:100%;
+  /*height:60px;*/
+  position:fixed;
+  z-index:1000;
+  opacity:0.7;
+  background: #000;
+  /* overflow:hidden; */
+}
+.links{
+  background-color: black;
+  width:60%;
+  height:60px;
+  margin-right: 0;
+  float:right;
+}
+.links a{
+  list-style:none;
+  width:18%;
+  display:block;/*a标签是行内元素，如果不变为块级元素，就只有字体部分的背景变化*/
+  line-height:60px;
+  float:left;
+  text-align:center;
+  height:60px;
+  color:white;
+  text-decoration:none;
+  border-radius: 10px;
+}
+.links a:hover{
+  color:red;
+  background-color: #ccc;
+}
+.logo{
+  background:url("../img/DATALAB.png") no-repeat;
+  background-size:200px 48px;
+  margin-top:6px;
+  width:35%;
+  height:60px;
+  margin-left:5%;
+  float:left;
+}
+.links i{
+  font-size:1em;
+  vertical-align: middle;
+}
+@media screen and (max-width: 1000px){
+  .links a{
+    overflow: hidden;
+    position: absolute;
+    right: 10%;
+    font-size: 18px;
+    border: 2px solid #fff;
+  }
+  .nono{
+    display: none!important;
+  }
+
+}
+@media screen and (max-device-width: 500px){
+  .links a{
+    overflow: hidden;
+    position: absolute;
+    right: 10%;
+    font-size: 18px;
+    border: 2px solid #fff;
+  }
+  .nono{
+    display: none!important;
+  }
+
+}
+.login-title{
+  margin-top:30px;
+
+}
+/*login*/
+.login a{
+  text-decoration:none;
+  color:black;
+  width:100px;
+  margin:0 auto;
+}
+.login-button a{
+  display:block;
+}
+.login{
+  width:512px;
+  height:550px;
+  position:fixed;
+  background:whitesmoke;
+  z-index:2001;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);/*让盒子居中*/
+  box-shadow:0px 0px 30px #dddd;
+  border: 3px solid #ebebeb;
+  border-radius: 20%;
+  display:none;
+}
+.login-input{
+  width: 100%;
+  height: 64px;
+  text-align:right;
+  line-height:35px;
+  font-size:15px;
+  vertical-align: middle;
+  display: block;
+  text-align: center;
+}
+.login-input input{
+  display: inline-block;
+}
+/*.login button{*/
+/* width:100%;*/
+/* text-align:center;*/
+/* line-height:40px;*/
+/* height:40px;*/
+/* border: 1px solid #000;*/
+/* background: #000;*/
+/*}*/
+.login-button{
+  display: block;
+  width: 100px;
+  font-size: 20px;
+  line-height:50px;
+  text-align:center;
+  margin:0 auto;
+  border-radius:20%;
+  cursor: pointer;
+}
+.bigrounded {
+
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+.pink {
+  color: #feeef5;
+  border: solid 1px #e9e9e9;
+  background: #f895c2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#feb1d3), to(#f171ab));
+  background: -moz-linear-gradient(top,  #feb1d3,  #f171ab);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#feb1d3', endColorstr='#f171ab');
+}
+.pink:hover {
+  background: #d57ea5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f4aacb), to(#e86ca4));
+  background: -moz-linear-gradient(top,  #f4aacb,  #e86ca4);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4aacb', endColorstr='#e86ca4');
+}
+.pink:active {
+  color: #f3c3d9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f171ab), to(#feb1d3));
+  background: -moz-linear-gradient(top,  #f171ab,  #feb1d3);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f171ab', endColorstr='#feb1d3');
+}
+.login-title span{
+  position:absolute;
+  font-size:20px;
+  font-weight: bold;
+  right:-5px;
+  top:1px;
+  background: whitesmoke;
+  border: 1px solid #ebebeb;
+  width:40px;
+  height:40px;
+  border-radius:20px;
+  line-height:40px;
+  text-align:center;
+  display:inline-block;
+}
+.login-title{
+  width:100%;
+  text-align:center;
+  line-height:40px;
+  height:40px;
+}
+.login-input img{
+  width:15px;
+  height:15px;
+}
+.login-input span{
+  font-size:10px;
+  color:red;
+  display:none;
+}
+input:focus{
+  outline:none;
+  border: 1.5px solid #f171ab;
+}
+#pic4{
+  display:none;
+}

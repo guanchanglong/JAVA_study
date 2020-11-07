@@ -1,0 +1,191 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.mengban{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+}
+body{
+  width: 100%;
+}
+/*被选中的元素的样式*/
+::selection{
+
+}
+.nav{
+  width: 100%;
+  height: 80px;
+  background: #957dad;
+}
+.content .block{
+  border: 1px solid #000;
+  width: 100%;
+  height: 900px;
+}
+.footer{
+  height: 200px;
+  width: 100%;
+}
+.footer-top{
+  width: 100%;
+  height: 200px;
+  background-color: #272727;
+  box-sizing: border-box;
+  /*ovh防止父元素跟着子元素一起动，这点要仔细查阅一下*/
+  /*overflow: hidden;*/
+  /*pos*/
+  position: relative;
+}
+.footer-top li{
+  width: 30%;
+  height: 120px;
+}
+.footer .footer-top .ziti>p{
+  margin: 12px 0px 0px 75px;
+  color: #ccc;
+}
+.footer .footer-top .ziti>p:nth-child(1){
+  line-height: 80px;
+  font-size: 20px;
+}
+.custom-btn {
+  width: 20%;
+  line-height: 50px;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /*原来是相对的，我自己改成ab*/
+  /*position: relative;*/
+  position: absolute;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  inset -7px -7px 10px 0px rgba(0,0,0,.1),7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  text-shadow:  2px 2px 3px rgba(255,255,255,.5),
+  -4px -4px 6px rgba(116, 125, 136, .2);
+  outline: none;
+  left: 40% ;
+  top: 50px;
+}
+/*10*/
+.btn-10 {
+  background: lightblue;
+  color: #60abf7;
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.btn-10:after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(.1);
+  transform: scale(.1);
+}
+.btn-10:hover {
+  color: #fff;
+  border: none;
+  background: transparent;
+}
+.btn-10:hover:after {
+  background: #7fbfff;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.footer-top .QRcode
+{
+  position: absolute;
+  top: 80px;
+  margin-left: 360px;
+  left: 55%;
+}
+.footer-top .QRcode a{
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background: url("../img/ico_hand.png");
+  cursor: pointer;
+}
+.footer-top .QRcode:hover img{
+  display: block;
+}
+.footer-top .QRcode img{
+  width: 282px;
+  position: absolute;
+  border-color:#e97d31 ;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px #e97d31;
+  left: -320%;
+  bottom: 100%;
+  z-index: 1000;
+  display: none;
+}
+.footer-top .QRcode a::after{
+  content: "";
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 55%;
+  top: 55%;
+  background: url("../img/ico_hand2.png");
+  cursor: pointer;
+  animation: chand 3s linear 0s infinite;
+  -webkit-animation: chand 3s linear 0s infinite;
+}
+@-webkit-keyframes chand{
+  0%{-webkit-transform:translate(0,0);}
+  10%{-webkit-transform:translate(5px,5px);}
+  20%{-webkit-transform:translate(0,0);}
+  30%{-webkit-transform:translate(5px,5px);}
+  40%{-webkit-transform:translate(0,0);}
+  100%{-webkit-transform:translate(0,0);}
+}
+@keyframes chand{
+  0%{transform:translate(0,0);}
+  10%{transform:translate(5px,5px);}
+  20%{transform:translate(0,0);}
+  30%{transform:translate(5px,5px);}
+  40%{transform:translate(0,0);}
+  100%{transform:translate(0,0);}
+}
+.footer-top .QRcode2{
+  position: absolute;
+  top: 50px;
+  margin-left: 450px;
+  left: 33%;
+}
+.footer-top .QRcode2 img{
+  width: 100px;
+  cursor: pointer;
+}
+.footer-bottom{
+  color: #ccc;
+  width: 100%;
+  background-color: #444;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.footer-bottom a{
+  text-decoration: none;
+  color: #999;
+}
