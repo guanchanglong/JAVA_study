@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="学生管理系统">学生管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/semantic.min.css}">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/semantic.min.js}"></script>
+</head>
+<body>
+<div style="text-align: center">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <span style="color: darkslategray; font-size: 30px" th:text="${Success.title}"></span>
+    <br>
+    <br>
+    <a class="ui mini green button" th:href="@{/students/findAll}">继续</a>
+</div>
+</body>
+</html>
