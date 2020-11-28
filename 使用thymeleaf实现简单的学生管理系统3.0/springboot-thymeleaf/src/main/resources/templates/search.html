@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/semantic.min.css}">
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/semantic.min.js}"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" th:href="@{/static/favicon.ico}"/>
+    <link rel="bookmark" href="favicon.ico" th:href="@{/static/favicon.ico}" type="image/x-icon"/>
+</head>
+<body>
+
+<div class="ui inverted secondary stackable menu">
+    <h2 class="ui teal header item">学生查找</h2>
+</div>
+
+<!-- table 列表-->
+<table class="ui celled table">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>学号</th>
+        <th>电话</th>
+        <th>综测</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${studentsList.size()} eq 0">
+        <td colspan="5">没有该学生信息!</td>
+    </tr>
+    <tr th:each="student : ${studentsList}">
+        <th scope="row" th:text="${studentStat.index + 1}">1</th>
+        <td th:text="${student.name}">neo</td>
+        <td th:text="${student.sex}">Otto</td>
+        <td th:text="${student.number}">6</td>
+        <td th:text="${student.phone}">6</td>
+        <td th:text="${student.grade}">6</td>
+        <td>
+            <a th:href="@{/students/modify}" class="ui mini teal button">修改</a>
+            <a th:href="@{/students/delete}" class="ui mini red button">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

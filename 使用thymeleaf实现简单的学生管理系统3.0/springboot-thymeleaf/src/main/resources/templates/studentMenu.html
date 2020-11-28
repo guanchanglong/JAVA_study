@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/semantic.min.css}">
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/semantic.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/static/icon/iconfont.css}">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" th:href="@{/static/favicon.ico}"/>
+    <link rel="bookmark" href="favicon.ico" th:href="@{/static/favicon.ico}" type="image/x-icon"/>
+</head>
+<body>
+
+
+<div class="ui inverted secondary stackable menu">
+    <h2 class="ui teal header item">管理</h2>
+</div>
+
+<form action="/students/findAllByNumber" method="get" class="ui segment form">
+
+    <!-- 学号 -->
+    <div class=" inline fields">
+
+        <div class="field">
+            <input type="text" name="number" placeholder="学号">
+        </div>
+
+        <!-- 搜索按钮 -->
+        <div class="field">
+            <button class="ui teal mini basic button" th:href="@{/students/findAllByNumber}"><i class="iconfont iconsoushuo"></i>搜索</button>
+        </div>
+
+    </div>
+</form>
+
+
+<!-- table 列表-->
+<table class="ui celled table">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>学号</th>
+        <th>电话</th>
+        <th>综测</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${studentsList.size()} eq 0">
+        <td colspan="7">没有学生信息!</td>
+    </tr>
+    <tr th:each="student : ${studentPage}">
+        <td scope="row" th:text="${studentStat.index + 1}">1</td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.sex}"></td>
+        <td th:text="${student.number}"></td>
+        <td th:text="${student.phone}"></td>
+        <td th:text="${student.grade}"></td>
+        <td>
+            <form action="/students/modify" method="get" th:object="${student}">
+                <input type="hidden" name="name" th:value="*{name}">
+                <input type="hidden" name="sex" th:value="*{sex}">
+                <input type="hidden" name="number" th:value="*{name}">
+                <input type="hidden" name="phone" th:value="*{phone}">
+                <input type="hidden" name="grade" th:value="*{grade}">
+<!--                <a th:href="@{/students/modify}" class="ui mini teal button">修改</a>-->
+                <button class="ui mini teal button" th:href="@{/students/modify}">修改</button>
+            </form>
+<!--            <a th:href="@{/students/modify}" class="ui mini teal button">修改</a>-->
+            <form action="/students/deleteStudents" method="get">
+                <input type="hidden" name="number" th:value="${student.number}">
+<!--            这里绝对不能使用<a>标签传值，使用<a>标签传值的话传到后端的值一直为空-->
+                <button class="ui mini red button" th:href="@{/students/deleteStudents}">删除</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div class="ui pagination menu" style="float: right">
+        <!-- 首页 -->
+        <div class="item">
+            <a th:href="'/students/findAll?pageNum=0'">首页</a>
+        </div>
+
+        <!-- 上一页 -->
+        <div class="item" th:if="${studentPage.hasPrevious()}">
+            <a th:href="'/students/findAll?pageNum=' + ${studentPage.previousPageable().getPageNumber()}" th:text="上一页"></a>
+        </div>
+
+        <!-- 中间页 -->
+        <div class="item" th:each="pageNum:${#numbers.sequence(0, studentPage.getTotalPages() - 1)}">
+            <a th:href="'/students/findAll?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum ne studentPage.pageable.getPageNumber()}"></a>
+            <a th:href="'/students/findAll?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum eq studentPage.pageable.getPageNumber()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+        </div>
+
+        <!-- 下一页 -->
+        <div class="item" th:if="${studentPage.hasNext()}">
+            <a th:href="'/students/findAll?pageNum=' + ${studentPage.nextPageable().getPageNumber()}" th:text="下一页"></a>
+        </div>
+
+        <!-- 尾页 -->
+        <div class="item">
+            <a th:href="'/students/findAll?pageNum=' + ${studentPage.getTotalPages() - 1}">尾页</a>
+        </div>
+</div>
+
+<div>
+    <a class="ui left floated button" th:href="@{/students/add}">新增</a>
+    <a class="ui left floated button" th:href="@{/menu/firstMenu}">返回主菜单</a>
+</div>
+
+</body>
+</html>
+
+
+

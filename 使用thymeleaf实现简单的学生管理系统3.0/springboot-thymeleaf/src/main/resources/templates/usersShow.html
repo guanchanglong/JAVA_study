@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/semantic.min.css}">
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/semantic.min.js}"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" th:href="@{/static/favicon.ico}"/>
+    <link rel="bookmark" href="favicon.ico" th:href="@{/static/favicon.ico}" type="image/x-icon"/>
+</head>
+<body>
+
+<!-- table 列表-->
+<table class="ui celled table">
+    <div style="text-align: center">
+        <br>
+        <br>
+        <br>
+        <span style="color: darkslategray; font-size: 30px">用户信息</span>
+        <br>
+        <br>
+        <br>
+    </div>
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>密码</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${usersList.size()} eq 0">
+        <td colspan="7">没有用户信息!</td>
+    </tr>
+    <tr th:each="user : ${usersPage}">
+        <td scope="row" th:text="${userStat.index + 1}">1</td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="ui pagination menu" style="float: right">
+    <!-- 首页 -->
+    <div class="item">
+        <a th:href="'/users/findAll?pageNum=0'">首页</a>
+    </div>
+
+    <!-- 上一页 -->
+    <div class="item" th:if="${usersPage.hasPrevious()}">
+        <a th:href="'/users/findAll?pageNum=' + ${usersPage.previousPageable().getPageNumber()}" th:text="上一页"></a>
+    </div>
+
+    <!-- 中间页 -->
+    <div class="item" th:each="pageNum:${#numbers.sequence(0, usersPage.getTotalPages() - 1)}">
+        <a th:href="'/users/findAll?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum ne usersPage.pageable.getPageNumber()}"></a>
+        <a th:href="'/users/findAll?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum eq usersPage.pageable.getPageNumber()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+    </div>
+
+    <!-- 下一页 -->
+    <div class="item" th:if="${usersPage.hasNext()}">
+        <a th:href="'/users/findAll?pageNum=' + ${usersPage.nextPageable().getPageNumber()}" th:text="下一页"></a>
+    </div>
+
+    <!-- 尾页 -->
+    <div class="item">
+        <a th:href="'/users/findAll?pageNum=' + ${usersPage.getTotalPages() - 1}">尾页</a>
+    </div>
+</div>
+<div>
+    <a class="ui left floated button" th:href="@{/menu/firstMenu}">返回主菜单</a>
+</div>
+</body>
+</html>
